@@ -1,2 +1,2 @@
 # CSPCryptarithmetic
-AI ex3
+AI ex6

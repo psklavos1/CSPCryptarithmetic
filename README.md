@@ -1,0 +1,2 @@
+# CSPCryptarithmetic
+AI ex3

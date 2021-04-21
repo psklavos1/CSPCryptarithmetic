@@ -5,7 +5,7 @@ import java.util.HashMap;
 // https://www.geeksforgeeks.org/solving-cryptarithmetic-puzzles-backtracking-8/, help was taken from
 
 // The efficiency could be increased significantly by implementing a heuristic at the selection of the next variable to be assigned
-// or by verifying the correctness of the assignement at each stage decreasing the repetitions. 
+// or by verifying the correctness of the assignment at each stage decreasing the repetitions. 
 public class SolverMain {
 	static boolean solution_found = false;
 
@@ -49,7 +49,7 @@ public class SolverMain {
 		addToCharList(chars, res);
 		printCharList(chars);
 
-		// Use a backtracking method to find valid assignements of the variables   
+		// Use a backtracking method to find valid assignments of the variables   
 		backtrackingSearch(op1, op2, res, chars, hashMap, used_numbers, 0, system);
 		if (!solution_found)
 			System.out.println("No solution found");
@@ -85,7 +85,7 @@ public class SolverMain {
 	public static void recursiveBacktracking(String op1, String op2, String res, ArrayList<Character> chars,
 			HashMap<Character, Integer> hashMap, boolean[] used_numbers, int letters_assigned, int system) {
 				
-		// If the assiignement is complete
+		// If the assignment is complete
 		if (letters_assigned == chars.size()) {
 			int operand1 = findNumber(op1, hashMap);
 			int operand2 = findNumber(op2, hashMap);
@@ -114,7 +114,7 @@ public class SolverMain {
 				// map the selected character to the current number 
 				hashMap.put(char_to_assign, i);
 				used_numbers[i] = true;
-				// Recurse further until a complete assaignemet is made. Logic could be improved
+				// Recurse further until a complete assignmet is made. Logic could be improved
 				recursiveBacktracking(op1, op2, res, chars, hashMap, used_numbers, letters_assigned + 1, system);
 				used_numbers[i] = false;
 				hashMap.remove(char_to_assign);
